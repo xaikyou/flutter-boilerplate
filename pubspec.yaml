@@ -1,0 +1,59 @@
+name: flutter_boilerplate
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Networking
+  dio: ^5.4.0
+  flutter_reactive_ble: ^5.3.1
+  
+  # Dependency Injection
+  get_it: ^7.7.0
+
+  # State Management
+  flutter_bloc: ^8.1.6
+
+  # Router
+  go_router: ^14.2.7
+
+  # Code Generation
+  freezed: ^2.5.7
+  injectable: ^2.4.4
+
+  # Localizations 
+  intl: any
+
+  # Services
+  shared_preferences: ^2.3.2
+  flutter_secure_storage: ^9.2.2
+  image_picker: ^1.1.2
+
+  # UI
+  cached_network_image: ^3.4.1
+  google_fonts: ^6.2.1
+  responsive_framework: ^1.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  
+  # Code Generation
+  build_runner: ^2.4.12
+  injectable_generator: ^2.6.2
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/fonts/
+    - assets/images/
