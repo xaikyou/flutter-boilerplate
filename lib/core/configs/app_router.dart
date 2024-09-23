@@ -1,18 +1,18 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_boilerplate/features/feature1/presentation/pages/feature1_page.dart';
+import 'package:flutter_boilerplate/features/nav/presentation/pages/nav_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
   AppRouter._();
-  
+
   static final _router = GoRouter(
-    initialLocation: '/feature1',
+    initialLocation: '/nav',
     navigatorKey: GlobalKey<NavigatorState>(),
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
-        path: '/feature1',
-        builder: (context, state) => const Feature1Page(),
+        path: '/nav',
+        builder: (context, state) => const NavScreen(),
       ),
       // ShellRoute(
       //   navigatorKey: GlobalKey<NavigatorState>(),

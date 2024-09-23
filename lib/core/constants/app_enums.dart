@@ -1,5 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
+enum Pages {
+  HOME,
+  HISTORY,
+  SCANNER,
+  NOTIFICATION,
+  PROFILE,
+}
+
 enum DataSource {
   SUCCESS,
   NO_CONTENT,
