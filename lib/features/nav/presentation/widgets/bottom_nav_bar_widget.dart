@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/core/utils/extensions/widget_extension.dart';
 
 class BottomNavBarWidget extends StatelessWidget {
   const BottomNavBarWidget({
@@ -34,7 +33,7 @@ class BottomNavBarWidget extends StatelessWidget {
         if (index == icons.length ~/ 2) {
           return NavigationDestination(
             icon: Container(
-              margin: const EdgeInsets.all(10),
+              // margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(7),
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 30, 30, 30),
@@ -52,8 +51,12 @@ class BottomNavBarWidget extends StatelessWidget {
           );
         }
         return NavigationDestination(
-          icon: icons[index].paddingVerticle(17),
+          icon: SizedBox(
+            height: double.infinity,
+            child: icons[index],
+          ),
           selectedIcon: Stack(
+            alignment: Alignment.topCenter,
             children: [
               Container(
                 width: double.infinity,
@@ -63,7 +66,10 @@ class BottomNavBarWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
               ),
-              selectedIcons![index].paddingVerticle(17),
+              SizedBox(
+                height: double.infinity,
+                child: selectedIcons![index],
+              ),
             ],
           ),
           label: labels?[index] ?? '',

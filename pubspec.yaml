@@ -41,7 +41,6 @@ dependencies:
 
   # UI
   icons_plus: ^5.0.0
-  flutter_svg: ^2.0.10+1
   cached_network_image: ^3.4.1
   google_fonts: ^6.2.1
   responsive_framework: ^1.5.1
