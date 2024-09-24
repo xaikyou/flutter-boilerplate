@@ -14,7 +14,7 @@ dependencies:
 
   # Networking
   dio: ^5.4.0
-  flutter_reactive_ble: ^5.3.1
+  flutter_blue_plus: ^1.32.12
 
   # Dependency Injection
   get_it: ^7.7.0
@@ -58,5 +58,5 @@ flutter:
   uses-material-design: true
   generate: true
 
-  assets:
-    - assets/icons/
+  # assets:
+  #   - assets/icons/
