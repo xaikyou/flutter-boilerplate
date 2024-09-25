@@ -8,12 +8,12 @@ class BottomNavBarWidget extends StatelessWidget {
     required this.onItemTapped,
     this.selectedIcons,
     this.labels,
-    this.height = kBottomNavigationBarHeight,
+    this.height,
     this.indicatorBorderRadius,
   });
 
   final int selectedIndex;
-  final double height;
+  final double? height;
   final List<Widget> icons;
   final List<Widget>? selectedIcons;
   final List<String>? labels;
@@ -24,7 +24,7 @@ class BottomNavBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return NavigationBar(
       selectedIndex: selectedIndex,
-      // height: height,
+      height: height,
       onDestinationSelected: onItemTapped,
       labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
       indicatorColor: Colors.transparent,

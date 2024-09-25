@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_boilerplate/core/styles/app_font.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class BleScanPage extends StatefulWidget {
@@ -101,12 +102,12 @@ class _BleScanPageState extends State<BleScanPage> {
   List<Widget> _buildScanResultTiles(BuildContext context) {
     return _scanResults
         .map(
-          (r) => r.advertisementData.connectable
+          (r) => r.advertisementData.connectable &&
+                  r.device.platformName.isNotEmpty
               ? ListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: r.device.platformName == ''
-                      ? AppFont.h3(r.device.remoteId.toString())
-                      : AppFont.h3(r.device.platformName),
+                  title: AppFont.h3(r.device.platformName),
+                  leading: Text(r.rssi.toString()),
                   onTap: () => onConnectPressed(r.device),
                 )
               : const SizedBox.shrink(),
@@ -120,7 +121,7 @@ class _BleScanPageState extends State<BleScanPage> {
       appBar: AppBar(
         title: AppFont.h1('Scan Page'),
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.go('/home'),
           icon: const Icon(MingCute.left_line),
         ),
       ),
@@ -128,7 +129,7 @@ class _BleScanPageState extends State<BleScanPage> {
       body: ListView(
         shrinkWrap: true,
         children: [
-          ..._buildSystemDeviceTiles(context),
+          // ..._buildSystemDeviceTiles(context),
           ..._buildScanResultTiles(context),
         ],
       ),
