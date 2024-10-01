@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/core/styles/app_color.dart';
 
 class BottomNavBarWidget extends StatelessWidget {
   const BottomNavBarWidget({
@@ -27,29 +28,9 @@ class BottomNavBarWidget extends StatelessWidget {
       height: height,
       onDestinationSelected: onItemTapped,
       labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-      indicatorColor: Colors.transparent,
+      // indicatorColor: Colors.transparent,
       indicatorShape: const CircleBorder(),
       destinations: List.generate(icons.length, (index) {
-        if (index == icons.length ~/ 2) {
-          return NavigationDestination(
-            icon: Container(
-              // margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(7),
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 30, 30, 30),
-                shape: BoxShape.circle,
-                border: Border.all(
-                  width: 5,
-                  color: const Color.fromARGB(255, 139, 168, 178),
-                  strokeAlign: BorderSide.strokeAlignOutside,
-                ),
-              ),
-              child: icons[index],
-            ),
-            selectedIcon: selectedIcons?[index],
-            label: labels?[index] ?? '',
-          );
-        }
         return NavigationDestination(
           icon: SizedBox(
             height: double.infinity,
@@ -62,7 +43,7 @@ class BottomNavBarWidget extends StatelessWidget {
                 width: double.infinity,
                 height: 5,
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: AppColor.kBlack,
                   borderRadius: BorderRadius.circular(50),
                 ),
               ),

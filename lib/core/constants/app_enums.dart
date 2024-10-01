@@ -3,7 +3,6 @@
 enum Pages {
   HOME,
   HISTORY,
-  SCANNER,
   NOTIFICATION,
   PROFILE,
 }

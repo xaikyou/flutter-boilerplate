@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_boilerplate/core/network/observer/ble_observer.dart';
 import 'package:flutter_boilerplate/features/history/history_page.dart';
 import 'package:flutter_boilerplate/features/home/presentation/pages/ble_off_page.dart';
 import 'package:flutter_boilerplate/features/home/presentation/pages/ble_scan_page.dart';
@@ -13,23 +14,27 @@ class AppRouter {
   AppRouter._();
 
   static final _router = GoRouter(
+    observers: [
+      BleObserver(),
+    ],
     initialLocation: '/home',
     navigatorKey: GlobalKey<NavigatorState>(),
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
         path: '/bleScan',
-        builder: (context, state) => const BleScanPage(),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: BleScanPage()),
       ),
       GoRoute(
         path: '/bleOff',
-        builder: (context, state) => const BleOffPage(),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: BleOffPage()),
       ),
       ShellRoute(
         navigatorKey: GlobalKey<NavigatorState>(),
-        pageBuilder: (context, state, child) {
-          return NoTransitionPage(child: NavScreen(child: child));
-        },
+        pageBuilder: (context, state, child) =>
+            NoTransitionPage(child: NavScreen(child: child)),
         routes: [
           GoRoute(
             path: '/home',
@@ -60,5 +65,6 @@ class AppRouter {
       ),
     ],
   );
+
   static GoRouter get router => _router;
 }

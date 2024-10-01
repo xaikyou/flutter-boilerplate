@@ -15,6 +15,7 @@ dependencies:
   # Networking
   dio: ^5.4.0
   flutter_blue_plus: ^1.32.12
+  connectivity_plus: ^6.0.5
 
   # Dependency Injection
   get_it: ^7.7.0
@@ -44,6 +45,7 @@ dependencies:
   cached_network_image: ^3.4.1
   google_fonts: ^6.2.1
   responsive_framework: ^1.5.1
+  flutter_speed_dial: ^7.0.0
 
 dev_dependencies:
   flutter_test:

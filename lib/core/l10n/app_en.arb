@@ -1,3 +1,7 @@
 {
-    "hello": "Hello"
+  "@@locale": "en",
+  "hello": "Hello",
+  "history": "History",
+  "notification": "Notification",
+  "profile": "Profile"
 }

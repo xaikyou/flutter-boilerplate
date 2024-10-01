@@ -1,3 +1,7 @@
 {
-    "hello": "Xin chào"
+  "@@locale": "vi",
+  "hello": "Xin chào",
+  "history": "Lịch sử",
+  "notification": "Thông báo",
+  "profile": "Tài khoản"
 }

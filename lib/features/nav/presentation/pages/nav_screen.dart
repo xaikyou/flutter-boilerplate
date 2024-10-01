@@ -17,9 +17,6 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   void onItemTapped(int pageIndex) {
-    if (pageIndex == Pages.values.length ~/ 2) {
-      return;
-    }
     context.go('/${Pages.values[pageIndex].name.toLowerCase()}');
     context
         .read<NavBloc>()

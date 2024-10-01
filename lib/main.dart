@@ -4,6 +4,7 @@ import 'package:flutter_boilerplate/core/configs/app_provider.dart';
 import 'package:flutter_boilerplate/core/configs/app_router.dart';
 import 'package:flutter_boilerplate/core/di/injection.dart';
 import 'package:flutter_boilerplate/core/network/services/local_storage_service.dart';
+import 'package:flutter_boilerplate/core/styles/app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
@@ -25,8 +26,11 @@ class MainApp extends StatelessWidget {
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
+        theme: AppTheme.lightThem,
+        darkTheme: AppTheme.darkThem,
+        themeMode: ThemeMode.light,
         supportedLocales: AppLocalizations.supportedLocales,
-        locale: const Locale('en'),
+        locale: const Locale('vn'),
       ),
     );
   }
